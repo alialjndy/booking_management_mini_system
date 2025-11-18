@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
      - name: Try Print Secrets
-       run: echo "My_Password is {{secrets.PASSWORD}}"
+       run: echo "My_Password is ${{secrets.PASSWORD}}"
   Specific_logs:
    runs-on: ubuntu-latest
    steps:
