@@ -4,10 +4,25 @@ on:
   push:
 
 jobs:
-  deploy: 
+  Specific_Variables: 
     runs-on: ubuntu-latest
     steps:
       - name: Print Variables
         run: |
           echo "App Name: ${{ vars.APP_NAME }}"
           echo "App Version: ${{ vars.APP_VERSION }}"
+  Specific_Secrets:
+    runs-on: ubuntu-latest
+    steps: 
+     - name: Try Print Secrets
+       run: echo "My_Password is {{secrets.PASSWORD}}"
+  Specific_logs:
+   runs-on: ubuntu-latest
+   steps:
+    - name: Print Logs Messages
+      run: |
+        echo "Installing Dependencies..."
+        echo "Running Migrations..."
+        echo "Running Seeders..."
+        echo "Deploy finished for ${{ vars.APP_NAME }}"
+        
